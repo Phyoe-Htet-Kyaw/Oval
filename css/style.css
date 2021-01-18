@@ -1,5 +1,5 @@
 .bg-crimson{
-    background-color: crimson !important;
+    background: crimson !important;
 }
 
 .bg-custom-dark{
@@ -7,7 +7,7 @@
 }
 
 .bg-outline-crimson{
-    border: 1px crimson solid !important;
+    border: 1px #dc143c solid !important;
     transition: all 0.4s ease;
     background-color: transparent;
 }
@@ -17,6 +17,10 @@
     overflow: auto;
 }
 
+nav{
+    padding: 0 !important;
+}
+
 header{
     position: fixed;
     top: 0;
@@ -24,7 +28,7 @@ header{
 }
 
 main{
-    margin-top: 5.5%;
+    margin-top: 4.5%;
 }
 
 .bg-outline-crimson:hover{
@@ -119,12 +123,13 @@ main{
 }
 
 .card-profile-pic{
-    width: 50px;
+    width: 7%;
     line-height: 0;
 }
 
 .card-profile-pic img{
     border-radius: 50%;
+    width: 100%;
 }
 
 .card-profile{
@@ -134,6 +139,7 @@ main{
 }
 
 .card-profile-fact{
+    width: 90%;
     margin-left: 3%;
 }
 
@@ -144,4 +150,14 @@ main{
 
 .card-like span:hover{
     color: crimson;
+}
+
+.login{
+    margin-top: 4.5%;
+    padding: 10%;
+}
+
+.register{
+    margin-top: 5%;
+    padding: 5%;
 }
