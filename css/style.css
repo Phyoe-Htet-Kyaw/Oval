@@ -36,11 +36,11 @@ main{
     border: none;
 }
 
-.panel-1 ul, .panel-3 ul{
+.panel-1 ul, .panel-2 ul, .panel-3 ul{
     padding-left: 0;
 }
 
-.panel-1 ul li, .panel-3 ul li{
+.panel-1 ul li, .panel-2 ul li, .panel-3 ul li{
     list-style: none;
     font-size: 1rem;
     line-height: 30px;
@@ -53,7 +53,11 @@ main{
     text-decoration: none;    
 }
 
-.panel-1 ul li:hover, .panel-3 ul li:hover{
+.panel-2 ul li a{
+    text-decoration: none;
+}
+
+.panel-1 ul li:hover, .panel-3 ul li:hover, .active{
     background-color: crimson;
     padding: 3%;
     border-radius: 10px;
@@ -160,4 +164,51 @@ main{
 .register{
     margin-top: 5%;
     padding: 5%;
+}
+
+.wallpaper{
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 300px;
+    border-radius: 10px;
+    position: relative;
+    z-index: 1;
+    margin-bottom: 10%;
+}
+
+.profile-name{
+    position: absolute;
+    bottom: -45px;
+    left: 20px;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+}
+
+.profile-picture{
+    width: 15%;
+}
+
+.profile-picture img{
+    border-radius: 50%;
+    box-shadow: 0 0 10px #000;
+}
+
+.profile-picture-name{
+    width: 85%;
+    margin-left: 3%;
+}
+
+.profile-picture-name h3{
+    text-shadow: 0 0 10px #000;
+}
+
+.uploaded-time{
+    font-size: 0.7rem;
+    display: block;
+}
+
+.custom-link{
+    text-decoration: none;
 }
