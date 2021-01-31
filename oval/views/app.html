@@ -1,0 +1,22 @@
+{% load static %}
+{% include "template/header.html" %}
+
+<main>
+    <section class="mt-3">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 col-sm-12">
+                    {% include 'template/left-side.html' %}
+                </div>
+                <div class="col-md-6 col-sm-12">
+                    {% block content %}{% endblock %}
+                </div>
+                <div class="col-md-3 col-sm-12">
+                    {% include 'template/right-side.html' %}
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+{% include "template/footer.html" %}

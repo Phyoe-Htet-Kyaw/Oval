@@ -22,5 +22,9 @@ from core import views
 
 urlpatterns = [
     path('', views.home, name='home'),
+    path('register/', views.register_form, name="registerForm"),
+    path('login/', views.login_form, name="loginForm"),
+    path('registering/', views.register, name="register"),
+    path('logining/', views.login, name="login"),
     path('admin/', admin.site.urls),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
