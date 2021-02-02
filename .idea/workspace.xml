@@ -1,15 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="fb975e04-dd41-4a8c-a2b1-48594c4e7f00" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oval/core/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/oval/core/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oval/core/static/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/oval/core/static/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oval/core/static/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/oval/core/static/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oval/core/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/oval/core/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oval/oval/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/oval/oval/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oval/views/auth/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/oval/views/auth/register.html" afterDir="false" />
-    </list>
+    <list default="true" id="fb975e04-dd41-4a8c-a2b1-48594c4e7f00" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
