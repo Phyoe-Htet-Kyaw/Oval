@@ -2,22 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fb975e04-dd41-4a8c-a2b1-48594c4e7f00" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/oval/views/app.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/oval/views/template/footer.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/oval/views/template/header.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/oval/views/template/left-side.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/oval/views/template/right-side.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oval/core/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/oval/core/admin.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/oval/core/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/oval/core/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oval/core/static/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/oval/core/static/css/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/oval/core/static/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/oval/core/static/js/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/oval/core/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/oval/core/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/oval/oval/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/oval/oval/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oval/oval/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/oval/oval/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oval/views/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/oval/views/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oval/views/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/oval/views/auth/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oval/views/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/oval/views/auth/register.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oval/views/auth/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/oval/views/auth/register.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,6 +71,7 @@
   </component>
   <component name="UnknownFeatures">
     <option featureType="com.intellij.fileTypeFactory" implementationName="*.js" />
+    <option featureType="com.intellij.fileTypeFactory" implementationName="*.css" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -91,6 +83,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

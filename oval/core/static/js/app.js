@@ -4,7 +4,6 @@ ClassicEditor
             console.error( error );
         } );
 
-
 function registerSubmit(event){
     event.preventDefault();
 
@@ -35,28 +34,35 @@ function registerSubmit(event){
                 if(con_password.value == ""){
                     con_password_error.innerText = "Please enter your confirm password!";
                 }else{
-                    if(password.value != con_password.value){
-                        password_error = "Password and Confirm Passoword didn't match!";
+                    if(password.value.length < 8){
+                        password_error.innerText = "Please enter your password length more than 8!";
                     }else{
-                        if(password.value.length < 8){
-                            password_error = "Please enter your password length more than 8!";
+                        if(con_password.value.length < 8){
+                            con_password_error.innerText = "Please enter your password length more than 8!";
                         }else{
-                            if(con_password.value < 8){
-                                con_password_error = "Please enter your password length more than 8!";
+                            if(password.value != con_password.value){
+                                password_error.innerText = "Password and Confirm Passoword didn't match!";
                             }else{
+                                var csrftoken = document.querySelector('[name=csrfmiddlewaretoken]').value;
                                 $.ajax({
-                                    url: 'http://127.0.0.1:8000/registering/',
+                                    url: 'http://localhost:8000/registering/',
                                     type: 'POST',
                                     data: {
                                         username: username.value,
                                         email: email.value,
                                         password: password.value,
                                     },
+                                    headers: {
+                                        'X-CSRFToken': csrftoken
+                                    },
                                     success: function(response){
-                                       console.log(response);
+                                        console.log(response);
+                                        if(response == 1){
+                                            location.href = "http://localhost:8000";
+                                        }
                                     },
                                     error: function(jqXHR, textStatus, errorThrown) {
-                                       console.log(textStatus, errorThrown);
+                                        console.log(textStatus, errorThrown);
                                     }
                                 })
                             }

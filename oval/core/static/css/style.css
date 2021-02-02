@@ -212,3 +212,7 @@ main{
 .custom-link{
     text-decoration: none;
 }
+
+.error-message{
+    color: red;
+}

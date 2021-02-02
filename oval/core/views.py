@@ -1,4 +1,6 @@
 from django.shortcuts import render, redirect
+from django.http import HttpResponse
+from django.db import connections
 
 # Create your views here.
 
@@ -24,10 +26,14 @@ def register(request):
         password = request.POST.get("password", None)
         con_password = request.POST.get("con_password", None)
 
-        print(request.POST.get("email", None))
-        return redirect('/')
+        cursor = connections['default'].cursor()
+        cursor.execute("INSERT INTO core_userinfo(name, email, password, user_role) VALUES( %s , %s, %s, %s )", [username, email, password, 0])
+
+        status = 1
+        return HttpResponse(status)
     else:
-        return redirect('register/')
+        status = 0
+        return HttpResponse(status)
 
 
 def login(request):
