@@ -16,11 +16,13 @@ function registerSubmit(event){
     var email_error = document.querySelector("#email-error");
     var password_error = document.querySelector("#password-error");
     var con_password_error = document.querySelector("#con-password-error");
+    var general_error = document.querySelector("#general-error");
 
     username_error.innerText = "";
     email_error.innerText = "";
     password_error.innerText = "";
     con_password_error.innerText = "";
+    general_error.innerText = "";
 
     if(username.value == ""){
         username_error.innerText = "Please enter your username!";
@@ -57,8 +59,10 @@ function registerSubmit(event){
                                     },
                                     success: function(response){
                                         console.log(response);
-                                        if(response == 1){
+                                        if(response.status == 1){
                                             location.href = "http://localhost:8000";
+                                        }else if(response.status == 0){
+                                            general_error.innerText = response.message;
                                         }
                                     },
                                     error: function(jqXHR, textStatus, errorThrown) {
