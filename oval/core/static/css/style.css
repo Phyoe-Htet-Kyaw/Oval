@@ -1,12 +1,12 @@
-.bg-crimson{
-    background: crimson !important;
+.bg-custom{
+    background: #186ba1 !important;
 }
 
 .bg-custom-dark{
     background-color: #333 !important;
 }
 
-.bg-outline-crimson{
+.bg-outline-custom{
     border: 1px #dc143c solid !important;
     transition: all 0.4s ease;
     background-color: transparent;
@@ -31,8 +31,10 @@ main{
     margin-top: 4.5%;
 }
 
-.bg-outline-crimson:hover{
-    background-color: crimson !important;
+.bg-outline-custom:hover{
+    background-color: #186ba1 !important;
+    color: #fff;
+    font-weight: bold;
     border: none;
 }
 
@@ -45,12 +47,17 @@ main{
     font-size: 1rem;
     line-height: 30px;
     cursor: pointer;
-    transition: all 0.4s ease;
 }
 
 .panel-1 ul li a, .panel-3 ul li a{
     display: block;
-    text-decoration: none;    
+    text-decoration: none;
+    transition: all 0.4s ease;
+}
+
+.panel-1 ul li a:hover, .panel-3 ul li a:hover{
+    color: #fff !important;
+    padding: 3%;
 }
 
 .panel-2 ul li a{
@@ -58,8 +65,9 @@ main{
 }
 
 .panel-1 ul li:hover, .panel-3 ul li:hover, .active{
-    background-color: crimson;
-    padding: 3%;
+    background-color: #186ba1;
+    font-weight: bold;
+    color: #fff;
     border-radius: 10px;
 }
 
@@ -101,7 +109,7 @@ main{
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-    background: crimson; 
+    background: #186ba1;
     border-radius: 10px;
 }
 
@@ -153,7 +161,7 @@ main{
 }
 
 .card-like span:hover{
-    color: crimson;
+    color: #186ba1;
 }
 
 .login{
@@ -215,4 +223,18 @@ main{
 
 .error-message{
     color: red;
+}
+
+.create-post-panel .create-post-form textarea{
+    background-color: #212529;
+    border-color: #186ba1;
+}
+
+.create-post-panel .create-post-form textarea:focus{
+    background-color: #212529;
+    box-shadow: 0 0 0 0.25rem rgb(220 20 60 / 25%) !important;
+}
+
+.create-post-panel .create-post-form textarea::placeholder{
+    color: #e4e4e4;
 }

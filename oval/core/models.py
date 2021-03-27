@@ -74,8 +74,8 @@ class Major(models.Model):
 class Post(models.Model):
     description = models.TextField()
     post_type_id = models.IntegerField()
-    user_id = models.IntegerField()
-    university_id = models.IntegerField()
+    user_id = models.IntegerField(null=True)
+    university_id = models.IntegerField(null=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 

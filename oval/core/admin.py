@@ -18,6 +18,10 @@ class MajorAdmin(admin.ModelAdmin):
     list_display = ['name', 'created_at', 'updated_at']
 
 
+class PostTypeAdmin(admin.ModelAdmin):
+    list_display = ['name', 'created_at', 'updated_at']
+
+
 class AskQuestionAdmin(admin.ModelAdmin):
     list_display = ['description', 'user']
 
@@ -28,7 +32,7 @@ admin.site.register(Country, CountryAdmin)
 admin.site.register(City, CityAdmin)
 admin.site.register(Major, MajorAdmin)
 admin.site.register(Post)
-admin.site.register(PostType)
+admin.site.register(PostType, PostTypeAdmin)
 admin.site.register(AskQuestion, AskQuestionAdmin)
 
 

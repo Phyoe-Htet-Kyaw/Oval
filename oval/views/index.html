@@ -4,34 +4,35 @@
 
     <ul class="nav nav-pills nav-justified">
         <li class="nav-item">
-            <a class="nav-link bg-crimson text-white" aria-current="page" href="index.html">Home</a>
+            <a class="nav-link bg-custom text-white fw-bold" aria-current="page" href="/">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-white" aria-current="page" href="#" data-bs-toggle="modal" data-bs-target="#create-post">Create Post</a>
+          <a class="nav-link text-dark fw-bold" aria-current="page" href="/create_post/">Create Post</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-white" href="#" data-bs-toggle="modal" data-bs-target="#ask-question">Asking Question</a>
+          <a class="nav-link text-dark fw-bold" href="#" data-bs-toggle="modal" data-bs-target="#ask-question">Asking Question</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-white" href="notification.html">Notification</a>
+          <a class="nav-link text-dark fw-bold" href="notification.html">Notification</a>
         </li>
     </ul>
-    <div class="panel-2 text-white">
-        <div class="card bg-dark">
+    <div class="panel-2">
+        {% for post in posts %}
+        <div class="card">
             <div class="card-body">
-                <a href="profile.html" class="text-white custom-link">
+                <a href="profile.html" class="custom-link">
                     <div class="card-profile">
                         <div class="card-profile-pic">
                             <img src="{% static 'images/profile-1.jpg' %}" class="img-fluid" alt="profile-1">
                         </div>
                         <div class="card-profile-fact">
-                            <b>Phyoe Htet Kyaw</b>
+                            <b class="text-dark">{{ post.4 }}</b>
                             <span class="text-muted uploaded-time">Updated at 10mins ago</span>
                         </div>
                     </div>
                 </a>
                 <div class="card-para mt-3">
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Illum, officia ducimus nisi impedit fugiat debitis, voluptas aliquam corporis sapiente, quaerat fuga natus odio adipisci nostrum earum! Id molestias tenetur nesciunt!</p>
+                    {{ post.1 | safe }}
                 </div>
                 <div class="card-like">
                     <span><i class="fa fa-thumbs-up"></i> 1.1k Likes</span> &nbsp;
@@ -40,82 +41,83 @@
             </div>
         </div>
         <hr>
-        <div class="card bg-dark">
-            <div class="card-body">
-                <a href="profile.html" class="text-white custom-link">
-                    <div class="card-profile">
-                        <div class="card-profile-pic">
-                            <img src="{% static 'images/profile-1.jpg' %}" class="img-fluid" alt="profile-1">
-                        </div>
-                        <div class="card-profile-fact">
-                            <b>Phyoe Htet Kyaw</b>
-                            <span class="text-muted uploaded-time">Updated at 10mins ago</span>
-                        </div>
-                    </div>
-                </a>
-                <div class="card-para mt-3">
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Illum, officia ducimus nisi impedit fugiat debitis, voluptas aliquam corporis sapiente, quaerat fuga natus odio adipisci nostrum earum! Id molestias tenetur nesciunt!</p>
-                </div>
-                <div class="card-gallery">
-                    <img src="{% static 'images/sitemgr_Native Ad 2.jpg' %}" class="img-fluid" alt="">
-                </div>
-                <div class="card-like mt-3">
-                    <span><i class="fa fa-thumbs-up"></i> 1.1k Likes</span> &nbsp;
-                    <span><i class="fa fa-comments"></i> 1.1k Comments</span>
-                </div>
-            </div>
-        </div>
-        <hr>
-        <div class="card bg-dark">
-            <div class="card-body">
-                <a href="profile.html" class="text-white custom-link">
-                    <div class="card-profile">
-                        <div class="card-profile-pic">
-                            <img src="{% static 'images/profile-1.jpg' %}" class="img-fluid" alt="profile-1">
-                        </div>
-                        <div class="card-profile-fact">
-                            <b>Phyoe Htet Kyaw</b>
-                            <span class="text-muted uploaded-time">Updated at 10mins ago</span>
-                        </div>
-                    </div>
-                </a>
-                <div class="card-para mt-3">
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Illum, officia ducimus nisi impedit fugiat debitis, voluptas aliquam corporis sapiente, quaerat fuga natus odio adipisci nostrum earum! Id molestias tenetur nesciunt!</p>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Illum, officia ducimus nisi impedit fugiat debitis, voluptas aliquam corporis sapiente, quaerat fuga natus odio adipisci nostrum earum! Id molestias tenetur nesciunt!</p>
-                </div>
-                <div class="card-like">
-                    <span><i class="fa fa-thumbs-up"></i> 1.1k Likes</span> &nbsp;
-                    <span><i class="fa fa-comments"></i> 1.1k Comments</span>
-                </div>
-            </div>
-        </div>
-        <hr>
-        <div class="card bg-dark">
-            <div class="card-body">
-                <a href="profile.html" class="text-white custom-link">
-                    <div class="card-profile">
-                        <div class="card-profile-pic">
-                            <img src="{% static 'images/profile-1.jpg' %}" class="img-fluid" alt="profile-1">
-                        </div>
-                        <div class="card-profile-fact">
-                            <b>Phyoe Htet Kyaw</b>
-                            <span class="text-muted uploaded-time">Updated at 10mins ago</span>
-                        </div>
-                    </div>
-                </a>
-                <div class="card-para mt-3">
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Illum, officia ducimus nisi impedit fugiat debitis, voluptas aliquam corporis sapiente, quaerat fuga natus odio adipisci nostrum earum! Id molestias tenetur nesciunt!</p>
-                </div>
-                <div class="card-gallery">
-                    <img src="{% static 'images/maxresdefault.jpg' %}" class="img-fluid" alt="">
-                </div>
-                <div class="card-like mt-3">
-                    <span><i class="fa fa-thumbs-up"></i> 1.1k Likes</span> &nbsp;
-                    <span><i class="fa fa-comments"></i> 1.1k Comments</span>
-                </div>
-            </div>
-        </div>
-        <hr>
+        {% endfor %}
+<!--        <div class="card bg-dark">-->
+<!--            <div class="card-body">-->
+<!--                <a href="profile.html" class="custom-link">-->
+<!--                    <div class="card-profile">-->
+<!--                        <div class="card-profile-pic">-->
+<!--                            <img src="{% static 'images/profile-1.jpg' %}" class="img-fluid" alt="profile-1">-->
+<!--                        </div>-->
+<!--                        <div class="card-profile-fact">-->
+<!--                            <b>Phyoe Htet Kyaw</b>-->
+<!--                            <span class="text-muted uploaded-time">Updated at 10mins ago</span>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </a>-->
+<!--                <div class="card-para mt-3">-->
+<!--                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Illum, officia ducimus nisi impedit fugiat debitis, voluptas aliquam corporis sapiente, quaerat fuga natus odio adipisci nostrum earum! Id molestias tenetur nesciunt!</p>-->
+<!--                </div>-->
+<!--                <div class="card-gallery">-->
+<!--                    <img src="{% static 'images/sitemgr_Native Ad 2.jpg' %}" class="img-fluid" alt="">-->
+<!--                </div>-->
+<!--                <div class="card-like mt-3">-->
+<!--                    <span><i class="fa fa-thumbs-up"></i> 1.1k Likes</span> &nbsp;-->
+<!--                    <span><i class="fa fa-comments"></i> 1.1k Comments</span>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        <hr>-->
+<!--        <div class="card bg-dark">-->
+<!--            <div class="card-body">-->
+<!--                <a href="profile.html" class="custom-link">-->
+<!--                    <div class="card-profile">-->
+<!--                        <div class="card-profile-pic">-->
+<!--                            <img src="{% static 'images/profile-1.jpg' %}" class="img-fluid" alt="profile-1">-->
+<!--                        </div>-->
+<!--                        <div class="card-profile-fact">-->
+<!--                            <b>Phyoe Htet Kyaw</b>-->
+<!--                            <span class="text-muted uploaded-time">Updated at 10mins ago</span>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </a>-->
+<!--                <div class="card-para mt-3">-->
+<!--                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Illum, officia ducimus nisi impedit fugiat debitis, voluptas aliquam corporis sapiente, quaerat fuga natus odio adipisci nostrum earum! Id molestias tenetur nesciunt!</p>-->
+<!--                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Illum, officia ducimus nisi impedit fugiat debitis, voluptas aliquam corporis sapiente, quaerat fuga natus odio adipisci nostrum earum! Id molestias tenetur nesciunt!</p>-->
+<!--                </div>-->
+<!--                <div class="card-like">-->
+<!--                    <span><i class="fa fa-thumbs-up"></i> 1.1k Likes</span> &nbsp;-->
+<!--                    <span><i class="fa fa-comments"></i> 1.1k Comments</span>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        <hr>-->
+<!--        <div class="card bg-dark">-->
+<!--            <div class="card-body">-->
+<!--                <a href="profile.html" class="custom-link">-->
+<!--                    <div class="card-profile">-->
+<!--                        <div class="card-profile-pic">-->
+<!--                            <img src="{% static 'images/profile-1.jpg' %}" class="img-fluid" alt="profile-1">-->
+<!--                        </div>-->
+<!--                        <div class="card-profile-fact">-->
+<!--                            <b>Phyoe Htet Kyaw</b>-->
+<!--                            <span class="text-muted uploaded-time">Updated at 10mins ago</span>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </a>-->
+<!--                <div class="card-para mt-3">-->
+<!--                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Illum, officia ducimus nisi impedit fugiat debitis, voluptas aliquam corporis sapiente, quaerat fuga natus odio adipisci nostrum earum! Id molestias tenetur nesciunt!</p>-->
+<!--                </div>-->
+<!--                <div class="card-gallery">-->
+<!--                    <img src="{% static 'images/maxresdefault.jpg' %}" class="img-fluid" alt="">-->
+<!--                </div>-->
+<!--                <div class="card-like mt-3">-->
+<!--                    <span><i class="fa fa-thumbs-up"></i> 1.1k Likes</span> &nbsp;-->
+<!--                    <span><i class="fa fa-comments"></i> 1.1k Comments</span>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        <hr>-->
     </div>
 
 {% endblock %}
