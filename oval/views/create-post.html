@@ -23,7 +23,7 @@
                 <img src="{% static 'images/profile-1.jpg' %}" class="img-fluid" alt="profile-1">
             </div>
             <div class="card-profile-fact">
-                <b class="text-white">Phyoe Htet Kyaw</b>
+                <b>Phyoe Htet Kyaw</b>
             </div>
         </div>
     </div>
@@ -31,7 +31,7 @@
         <form action="/upload_post/" method="post">
             {% csrf_token %}
             <textarea name="post" id="summernote" cols="30" rows="10" placeholder="What's on your mind" class="form-control form-control-sm"></textarea>
-            <button type="submit" class="btn bg-crimson text-white mt-3"><i class="fa fa-paper-plane"></i> Submit</button>
+            <button type="submit" class="btn bg-custom text-white mt-3"><i class="fa fa-paper-plane"></i> Submit</button>
         </form>
     </div>
 </div>

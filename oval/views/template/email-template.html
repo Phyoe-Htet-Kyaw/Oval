@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .bg{
+            background-color: #186ba1;
+            padding-top: 10%;
+            padding-bottom: 10%;
+        }
+
+        .main{
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 3%;
+            width: 60%;
+            margin: 0 auto;
+            color: #333;
+        }
+
+        .main .header h1{
+            text-align: center;
+        }
+
+        .main .para{
+            margin: 5% 0;
+        }
+
+        .main .code{
+            padding: 3%;
+            background-color: #e4e4e4;
+            text-align: center;
+            font-weight: bold;
+            letter-spacing: 10px;
+            display: block;
+            margin: 0 auto;
+            font-size: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="bg">
+        <div class="main">
+            <div class="header">
+                <h1>Verify Your Email!</h1>
+            </div>
+            <div class="para">
+                <p>We send a verification code to your email. We describe you following. Please copy that code and paste on OVAL- Email Verification Page. If you have any trouble, please let me know.</p>
+            </div>
+            <div class="code">
+                <span>{{ code }}</span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

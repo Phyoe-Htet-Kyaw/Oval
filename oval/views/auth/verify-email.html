@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Oval - Sign Up</title>
+    <title>Verification Email</title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
@@ -12,7 +12,7 @@
 </head>
 <body class="bg-custom">
     <div class="container">
-        <div class="card register text-dark">
+        <div class="card login text-dark">
             <div class="card-body">
                 <div class="row">
                     <div class="col-md-6 col-sm-12">
@@ -24,35 +24,22 @@
                     <div class="col-md-6 col-sm-12">
                         <div class="row">
                             <div class="col-md-8 offset-2">
-                                <h3>Sign Up</h3>
-                                <form id="register-form" method="POST">
+                                <h3>Verify Your Code</h3>
+                                <p>
+                                    We need to verify your email. So, we'll send a verification code to your email. You need to put that code.
+                                    Didn't get a code? <a href="/verify_email/">Resend it.</a>
+                                </p>
+                                <form method="POST" id="verify-form">
                                     {% csrf_token %}
                                     <div class="form-group mt-3">
                                         <span id="general-error" class="error-message"></span>
-                                        <label for="username">Name:</label>
-                                        <input type="text" name="username" id="username" placeholder="Enter Name" class="form-control form-control-sm">
-                                        <span id="username-error" class="error-message"></span>
+                                        <input type="text" name="verify_code" id="verify_code" placeholder="Enter Your Verification Code" class="form-control form-control-sm">
+                                        <span id="verify-code-error" class="error-message"></span>
                                     </div>
                                     <div class="form-group mt-3">
-                                        <label for="email">Email:</label>
-                                        <input type="email" name="email" id="email" placeholder="Enter Email" class="form-control form-control-sm">
-                                        <span id="email-error" class="error-message"></span>
-                                    </div>
-                                    <div class="form-group mt-3">
-                                        <label for="password">Password:</label>
-                                        <input type="password" name="password" id="password" placeholder="Enter Password" class="form-control form-control-sm">
-                                        <span id="password-error" class="error-message"></span>
-                                    </div>
-                                    <div class="form-group mt-3">
-                                        <label for="con-password">Confirm Password:</label>
-                                        <input type="password" name="con_password" id="con-password" placeholder="Enter Confirm Password" class="form-control form-control-sm">
-                                        <span id="con-password-error" class="error-message"></span>
-                                    </div>
-                                    <div class="form-group mt-3">
-                                        <button type="submit" class="btn bg-custom form-control form-control-sm text-white"><i class="fa fa-sign-in"></i> Sign Up</button>
+                                        <button type="submit" class="btn bg-custom form-control form-control-sm text-white"><i class="fa fa-sign-in"></i> Submit</button>
                                     </div>
                                 </form>
-                                <p class="text-center mt-3">If you have already an account, please <a href="/login/" class="text-dark">sign in</a>.</p>
                             </div>
                         </div>
                     </div>
@@ -63,6 +50,6 @@
     <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
 <!--    <script src="https://cdn.ckeditor.com/ckeditor5/24.0.0/classic/ckeditor.js"></script>-->
-    <script src="{% static 'js/app.js' %}"></script>
+    <script src="{% static 'js/verification.js' %}"></script>
 </body>
 </html>

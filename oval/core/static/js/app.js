@@ -1,13 +1,3 @@
-//ClassicEditor
-//        .create( document.querySelector( '#editor' ) )
-//        .catch( error => {
-//            console.error( error );
-//        } );
-
-
-
-
-
 var Auth = {
     registerSubmit: function(event){
         event.preventDefault();
@@ -65,7 +55,7 @@ var Auth = {
                                         success: function(response){
                                             console.log(response);
                                             if(response.status == 1){
-                                                location.href = "http://localhost:8000";
+                                                location.href = "http://localhost:8000/verify_email/";
                                             }else if(response.status == 0){
                                                 general_error.innerText = response.message;
                                             }
@@ -133,3 +123,4 @@ var Auth = {
 
 if(document.querySelector("#register-form") != null){ document.querySelector("#register-form").addEventListener("submit", Auth.registerSubmit); }
 if(document.querySelector("#login-form") != null){ document.querySelector("#login-form").addEventListener("submit", Auth.loginSubmit); }
+

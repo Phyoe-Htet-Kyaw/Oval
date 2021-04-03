@@ -30,6 +30,13 @@ urlpatterns = [
     path('logout/', views.logout, name="logout"),
     path('registering/', views.register, name="register"),
     path('logining/', views.login, name="login"),
+    path('verify_email/', views.verify_email_view, name="verify_email_view"),
+    path('verifying/', views.checking_verification_code, name="checking_verification_code"),
+    path('upload_profile_picture/', views.upload_profile_picture_view, name="upload_profile_picture_view"),
+    path('uploading_profile_picture/', views.uploading_profile_picture, name="uploading_profile_picture"),
+    path('upload_cover_photo_view/', views.upload_cover_photo_view, name="upload_cover_photo_view"),
+    path('testing/', views.testing, name="testing"),
 
     path('admin/', admin.site.urls),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
