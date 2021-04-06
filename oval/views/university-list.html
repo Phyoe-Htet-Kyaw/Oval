@@ -1,0 +1,29 @@
+{% extends "app.html" %}
+{% load static %}
+{% load extra %}
+{% block content %}
+
+<div class="panel-2">
+    {% for uni in uni_info %}
+    <div class="card">
+        <div class="card-body">
+            <a href="/university_detail/{{ uni.0|encrypt_id }}" class="custom-link">
+                <div class="card-profile">
+                    <div class="card-profile-pic">
+                        <div class="profile-pic-style" style="background-image: url(data:image/png;base64,{{ post.5 }});"></div>
+                    </div>
+                    <div class="card-profile-fact">
+                        <h5 class="text-dark">{{ uni.1 }}</h5>
+                    </div>
+                </div>
+            </a>
+            <div class="card-para mt-3">
+<!--                {{ uni.1 | safe }}-->
+            </div>
+        </div>
+    </div>
+    <hr>
+    {% endfor %}
+    </div>
+
+{% endblock %}

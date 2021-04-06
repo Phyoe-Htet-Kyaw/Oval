@@ -26,8 +26,12 @@ class AskQuestionAdmin(admin.ModelAdmin):
     list_display = ['description', 'user']
 
 
+class UniversityAdmin(admin.ModelAdmin):
+    list_display = ['name', 'admin_email', 'created_at', 'updated_at']
+
+
 admin.site.register(UserInfo)
-admin.site.register(University)
+admin.site.register(University, UniversityAdmin)
 admin.site.register(Country, CountryAdmin)
 admin.site.register(City, CityAdmin)
 admin.site.register(Major, MajorAdmin)

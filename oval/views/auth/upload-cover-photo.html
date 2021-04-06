@@ -26,21 +26,19 @@
                             <div class="col-md-8 offset-2">
                                 <div class="profile-card">
                                     <h3>Upload Cover Photo</h3>
-                                    <div class="profile-image">
+                                    <div class="cover-image">
                                         <div id="img-preview" style="border-radius: 0% !important;"></div>
                                         <!-- <img src="./blank-profile-picture-973460_640.png" alt="" id="img-preview"> -->
                                     </div>
                                     <div class="file-upload">
-                                        <form id="upload-profie-picture-form" enctype="multipart/form-data">
+                                        <form id="upload-cover-photo-form" enctype="multipart/form-data">
                                             {% csrf_token %}
-                                            <span id="upload-profie-picture-error" class="error-message"></span>
+                                            <span id="upload-cover-photo-error" class="error-message"></span>
                                             <label for="fileupload">Upload</label>
                                             <input type="file" id="fileupload" name="profile_picture" accept="image/*">
                                             <input type="submit" value="Submit">
                                         </form>
                                     </div>
-                                    <hr>
-                                    <label id="skip-profile">Skip</label>
                                 </div>
                             </div>
                         </div>
@@ -52,6 +50,6 @@
     <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
 <!--    <script src="https://cdn.ckeditor.com/ckeditor5/24.0.0/classic/ckeditor.js"></script>-->
-    <script src="{% static 'js/upload-profile-picture.js' %}"></script>
+    <script src="{% static 'js/upload-cover-photo.js' %}"></script>
 </body>
 </html>

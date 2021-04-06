@@ -14,7 +14,7 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 
@@ -22,8 +22,13 @@ from core import views
 
 urlpatterns = [
     path('', views.home, name='home'),
-    path('create_post/', views.create_post_view, name='createPostView'),
     path('upload_post/', views.upload_post, name='uploadPost'),
+    path('talent/', views.talent, name='talent'),
+    path('profile/<email>/', views.profile, name='profile'),
+
+    path('university_list/', views.university_list, name='university_list'),
+    path('university_detail/<uni_id>', views.university_detail, name='university_detail'),
+    path('university_update/<uni_id>', views.university_update, name='university_update'),
 
     path('register/', views.register_form, name="registerForm"),
     path('login/', views.login_form, name="loginForm"),
@@ -35,6 +40,7 @@ urlpatterns = [
     path('upload_profile_picture/', views.upload_profile_picture_view, name="upload_profile_picture_view"),
     path('uploading_profile_picture/', views.uploading_profile_picture, name="uploading_profile_picture"),
     path('upload_cover_photo_view/', views.upload_cover_photo_view, name="upload_cover_photo_view"),
+    path('uploading_cover_photo/', views.uploading_cover_photo, name="uploading_cover_photo"),
     path('testing/', views.testing, name="testing"),
 
     path('admin/', admin.site.urls),

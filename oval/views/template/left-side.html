@@ -1,13 +1,16 @@
 {% load static %}
+{% load extra %}
 <div class="panel-1 text-dark">
     <h3>Profile</h3>
     <ul>
         <li>
-            <a href="profile.html" class="text-dark">
-                <div class="profile-img">
-                    <img src="{% static 'images/profile-1.jpg' %}" class="img-fluid" alt="profile-1">
+            <a href="/profile/{{ email|encrypt_email }}/" class="text-dark">
+                <div class="profile-display">
+                    <div class="profile-img">
+                        <div class="profile-pic-style" style="background-image: url(data:image/png;base64,{{ profile_picture }});"></div>
+                    </div>
+                    <b>{{ username }}</b>
                 </div>
-                <b>{{ username }}</b>
             </a>
         </li>
     </ul>
@@ -39,7 +42,7 @@
             </a>
         </li>
         <li>
-            <a href="#" class="text-dark">
+            <a href="/university_list/" class="text-dark">
                 <i class="fa fa-list"></i>
                 <span>See More</span>
             </a>

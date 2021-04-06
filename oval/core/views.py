@@ -12,6 +12,7 @@ from django.core.files.storage import FileSystemStorage
 import random
 import math
 import os
+import base64
 # Create your views here.
 
 
@@ -22,37 +23,161 @@ def home(request):
     else:
         cursor = connections['default'].cursor()
         cursor.execute("SELECT core_post.id, core_post.description, core_post.post_type_id, core_post.created_at, "
-                       "core_userinfo.name FROM `core_post` INNER JOIN core_userinfo ON "
+                       "core_userinfo.name, core_userinfo.profile_picture FROM `core_post` INNER JOIN core_userinfo ON "
                        "core_post.user_id=core_userinfo.id ORDER BY core_post.id DESC")
         res = cursor.fetchall()
 
-        cursor.execute("SELECT name as username FROM core_userinfo WHERE id= %s", [request.session["user_id"]])
+        cursor.execute("SELECT name as username, profile_picture, email FROM core_userinfo WHERE id= %s", [request.session["user_id"]])
         user_info = cursor.fetchone()
 
         context = {
             "posts": res,
-            "username": user_info[0]
+            "username": user_info[0],
+            "profile_picture": user_info[1],
+            "email": user_info[2]
         }
         return render(request, "index.html", context)
-
-
-def create_post_view(request):
-    return render(request, "create-post.html")
 
 
 def upload_post(request):
     if request.POST.get("post", None) == "":
         return redirect("/create_post/")
     else:
-        print(request.POST.get("post", None))
         description = request.POST.get("post", None)
         cursor = connections['default'].cursor()
         cursor.execute("INSERT INTO core_post(description, post_type_id, user_id, university_id, created_at, "
                        "updated_at) VALUES( %s , %s, %s, "
                        "%s, %s, %s )",
                        [description, 1, request.session["user_id"], None, datetime.now(), datetime.now()])
-        return redirect("/")
+        return redirect("/talent/")
 
+
+def talent(request):
+    if "user_id" not in request.session:
+        return redirect("/login/")
+    else:
+        cursor = connections['default'].cursor()
+        cursor.execute("SELECT core_post.id, core_post.description, core_post.post_type_id, core_post.created_at, "
+                       "core_userinfo.name, core_userinfo.profile_picture, core_userinfo.email FROM `core_post` INNER "
+                       "JOIN core_userinfo ON "
+                       "core_post.user_id=core_userinfo.id WHERE core_post.post_type_id=1 ORDER BY core_post.id DESC")
+        res = cursor.fetchall()
+
+        cursor.execute("SELECT name as username, profile_picture, email FROM core_userinfo WHERE id= %s", [request.session["user_id"]])
+        user_info = cursor.fetchone()
+
+        context = {
+            "posts": res,
+            "username": user_info[0],
+            "profile_picture": user_info[1],
+            "email": user_info[2],
+        }
+        return render(request, "talent.html", context)
+
+
+def profile(request, email):
+    if "user_id" not in request.session:
+        return redirect("/login/")
+    else:
+        if request.method == 'GET':
+            decoded_email = base64.b64decode(email).decode("UTF-8")
+            cursor = connections['default'].cursor()
+            cursor.execute(
+                "SELECT core_post.id, core_post.description, core_post.post_type_id, core_post.created_at, "
+                "core_userinfo.name, core_userinfo.profile_picture, core_userinfo.email "
+                "FROM `core_post` INNER JOIN core_userinfo ON "
+                "core_post.user_id=core_userinfo.id WHERE core_post.post_type_id=1 AND core_userinfo.email= %s "
+                "ORDER BY core_post.id DESC", [decoded_email])
+            res = cursor.fetchall()
+
+            cursor.execute("SELECT name as username, profile_picture, email, cover_photo FROM "
+                           "core_userinfo WHERE email= %s ",
+                           [decoded_email])
+            user_info = cursor.fetchone()
+
+            context = {
+                "posts": res,
+                "username": user_info[0],
+                "profile_picture": user_info[1],
+                "email": user_info[2],
+                "cover_photo": user_info[3],
+            }
+            return render(request, "profile.html", context)
+        else:
+            return redirect("/")
+
+
+# Other Pages
+
+def university_list(request):
+    if "user_id" not in request.session:
+        return redirect("/login/")
+    else:
+        cursor = connections['default'].cursor()
+        cursor.execute("SELECT name as username, profile_picture, email FROM core_userinfo WHERE id= %s",
+                       [request.session["user_id"]])
+        user_info = cursor.fetchone()
+
+        cursor.execute("SELECT * FROM core_university ORDER BY id DESC")
+        uni_info = cursor.fetchall()
+
+        context = {
+            "username": user_info[0],
+            "profile_picture": user_info[1],
+            "email": user_info[2],
+            "uni_info": uni_info
+        }
+        return render(request, "university-list.html", context)
+
+
+def university_detail(request, uni_id):
+    if "user_id" not in request.session:
+        return redirect("/login/")
+    else:
+        decoded_uni_id = base64.b64decode(uni_id).decode("UTF-8")
+        id = int(decoded_uni_id)
+
+        cursor = connections['default'].cursor()
+        cursor.execute("SELECT name as username, profile_picture, email FROM core_userinfo WHERE id= %s",
+                       [request.session["user_id"]])
+        user_info = cursor.fetchone()
+
+        cursor.execute("SELECT * FROM core_university WHERE id= %s",
+                       [id])
+        uni_info = cursor.fetchone()
+
+        context = {
+            "username": user_info[0],
+            "profile_picture": user_info[1],
+            "email": user_info[2],
+            "uni_info": uni_info
+        }
+        return render(request, "university-detail.html", context)
+
+
+def university_update(request, uni_id):
+    if "user_id" not in request.session:
+        return redirect("/login/")
+    else:
+        decoded_uni_id = base64.b64decode(uni_id).decode("UTF-8")
+        id = int(decoded_uni_id)
+
+        cursor = connections['default'].cursor()
+        cursor.execute("SELECT name as username, profile_picture, email FROM core_userinfo WHERE id= %s",
+                       [request.session["user_id"]])
+        user_info = cursor.fetchone()
+
+        cursor.execute("SELECT * FROM core_university WHERE id= %s",
+                       [id])
+        uni_info = cursor.fetchone()
+
+        context = {
+            "username": user_info[0],
+            "profile_picture": user_info[1],
+            "email": user_info[2],
+            "uni_info": uni_info
+        }
+        return render(request, "university-update.html", context)
 
 # Authentication Pages
 
@@ -261,6 +386,6 @@ def uploading_cover_photo(request):
 
 def testing(request):
     cursor = connections['default'].cursor()
-    cursor.execute("SELECT profile_picture FROM core_userinfo WHERE id= %s", [request.session["user_id"]])
+    cursor.execute("SELECT cover_photo FROM core_userinfo WHERE id= %s", [request.session["user_id"]])
     res = cursor.fetchone()
     return render(request, "auth/test.html", {"pro_pic": res[0]})

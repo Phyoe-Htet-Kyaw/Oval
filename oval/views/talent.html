@@ -11,14 +11,18 @@
           <a class="nav-link text-dark fw-bold" href="#">Asking Question</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-dark fw-bold" href="/talent/">Talent</a>
+          <a class="nav-link bg-custom text-white fw-bold" href="/talent/">Talent</a>
         </li>
     </ul>
     <div class="panel-2">
-        <div class="profile-cover-photo" style="background-image: url(data:image/png;base64,{{ cover_photo }});"></div>
-        <div class="profile-picture-name">
-            <div class="profile-picture-profile" style="background-image: url(data:image/png;base64,{{ profile_picture }});"></div>
-            <b style="font-size: 25px;" class="ml-3">{{ username }}</b>
+        <div class="create-post-panel">
+            <div class="create-post-form mt-3">
+                <form action="/upload_post/" method="post">
+                    {% csrf_token %}
+                    <textarea name="post" id="summernote" cols="30" rows="10" placeholder="What's on your mind" class="form-control form-control-sm"></textarea>
+                    <button type="submit" class="btn bg-custom text-white mt-3"><i class="fa fa-paper-plane"></i> Submit</button>
+                </form>
+            </div>
         </div>
         <hr>
         {% for post in posts %}

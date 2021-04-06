@@ -26,18 +26,19 @@ class UserInfo(models.Model):
 
 
 class University(models.Model):
-    name = models.CharField(max_length=255)
-    place = models.CharField(max_length=255)
-    city_id = models.IntegerField()
-    country_id = models.IntegerField()
-    profile_picture = models.CharField(max_length=255)
-    cover_photo = models.CharField(max_length=255)
-    representative_id = models.IntegerField()
-    description = models.TextField()
-    major_id = models.IntegerField()
-    google_map_link = models.TextField()
-    created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now=True)
+    name = models.CharField(max_length=255, null=True, blank=True)
+    admin_email = models.CharField(max_length=255, null=True, blank=True)
+    place = models.CharField(max_length=255, null=True, blank=True)
+    city_id = models.IntegerField(null=True, blank=True)
+    country_id = models.IntegerField(null=True, blank=True)
+    profile_picture = models.CharField(max_length=255, null=True, blank=True)
+    cover_photo = models.CharField(max_length=255, null=True, blank=True)
+    representative_id = models.IntegerField(null=True, blank=True)
+    description = models.TextField(null=True, blank=True)
+    major_id = models.IntegerField(null=True, blank=True)
+    google_map_link = models.TextField(null=True, blank=True)
+    created_at = models.DateTimeField(auto_now_add=True, null=True, blank=True)
+    updated_at = models.DateTimeField(auto_now=True, null=True, blank=True)
 
     def __str__(self):
         return self.name

@@ -1,0 +1,72 @@
+{% extends "app.html" %}
+{% load static %}
+{% load extra %}
+{% block content %}
+
+<div class="panel-2">
+    <form action="" method="post">
+        <div class="profile-cover-photo" id="cover-preview" style="border: 1px solid #186ba1;"></div>
+        <div class="profile-picture-name">
+            <div class="profile-picture-profile" id="profile-preview" style="border: 1px solid #186ba1; background-color: #fff;"></div>
+        </div>
+        <div class="file-upload">
+            <div class="row">
+                <div class="col-md-6 col-sm-12">
+                    <label for="profile-fileupload">Upload Profile Picture</label>
+                    <input type="file" id="profile-fileupload" name="profile_picture" accept="image/*">
+                </div>
+                <div class="col-md-6 col-sm-12">
+                    <label for="cover-fileupload">Upload Profile Picture</label>
+                    <input type="file" id="cover-fileupload" name="profile_picture" accept="image/*">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 col-sm-12">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" name="name" id="name" placeholder="Enter Name" class="form-control-sm form-control">
+                </div>
+            </div>
+            <div class="col-md-6 col-sm-12">
+                <div class="form-group">
+                    <label for="address">Address</label>
+                    <input type="text" name="address" id="address" placeholder="Enter Address" class="form-control-sm form-control">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 col-sm-12">
+                <div class="form-group">
+                    <label for="country">Country</label>
+                    <select name="country" id="country" class="form-control form-control-sm">
+                        <option value="1">Test</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-md-6 col-sm-12">
+                <div class="form-group">
+                    <label for="city">City</label>
+                    <select name="city" id="city" class="form-control form-control-sm">
+                        <option value="1">Test</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <label for="map">Google Map</label>
+                <input type="text" name="map" id="map" placeholder="Enter Google Map Link" class="form-control-sm form-control">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <label>About</label>
+                <textarea name="post" id="summernote" cols="30" rows="10" placeholder="What's on your mind" class="form-control form-control-sm"></textarea>
+            </div>
+        </div>
+    </form>
+</div>
+
+{% endblock %}
+

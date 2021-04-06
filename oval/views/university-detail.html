@@ -1,0 +1,19 @@
+{% extends "app.html" %}
+{% load static %}
+{% load extra %}
+{% block content %}
+
+<div class="panel-2">
+    <div class="profile-cover-photo" style="background-image: url(data:image/png;base64,{{ cover_photo }});"></div>
+    <div class="profile-picture-name">
+        <div class="profile-picture-profile" style="background-image: url(data:image/png;base64,{{ profile_picture }});"></div>
+        <b style="font-size: 25px;" class="ml-3">{{ uni_info.1 }}</b>
+    </div>
+    <div class="profile-option">
+        <a href="/university_update/{{ uni_info.0|encrypt_id }}" class="badge badge-primary">Update your university profile</a>
+    </div>
+    <hr>
+</div>
+
+{% endblock %}
+
