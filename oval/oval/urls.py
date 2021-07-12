@@ -27,8 +27,10 @@ urlpatterns = [
     path('profile/<email>/', views.profile, name='profile'),
 
     path('university_list/', views.university_list, name='university_list'),
-    path('university_detail/<uni_id>', views.university_detail, name='university_detail'),
-    path('university_update/<uni_id>', views.university_update, name='university_update'),
+    path('university_detail/<uni_id>/', views.university_detail, name='university_detail'),
+    path('upload_university_post/<uni_id>/', views.upload_university_post, name='upload_university_post'),
+    path('university_update/<uni_id>/', views.university_update, name='university_update'),
+    path('university_update_process/', views.university_update_process, name='university_update_process'),
 
     path('register/', views.register_form, name="registerForm"),
     path('login/', views.login_form, name="loginForm"),
@@ -44,5 +46,8 @@ urlpatterns = [
     path('testing/', views.testing, name="testing"),
 
     path('admin/', admin.site.urls),
+
+    path('api/get_city_list/', views.get_cities_list, name="get_cities_list")
+
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

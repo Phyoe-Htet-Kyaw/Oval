@@ -344,3 +344,16 @@ main{
     position: relative;
     top: -30px;
 }
+
+.university-profile-list{
+    line-height: 15px;
+}
+
+.location-map{
+    width: 100%;
+    line-height: 0px;
+}
+
+.location-map iframe{
+    width: 100%;
+}

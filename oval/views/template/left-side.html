@@ -17,34 +17,33 @@
     <hr>
     <h3>Universities</h3>
     <ul>
-        <li>
-            <a href="#" class="text-dark">
-                <i class="fa fa-university"></i>
-                <span>Yangon University</span>
-            </a>
-        </li>
-        <li>
-            <a href="#" class="text-dark">
-                <i class="fa fa-university"></i>
-                <span>Dagon University</span>
-            </a>
-        </li>
-        <li>
-            <a href="#" class="text-dark">
-                <i class="fa fa-university"></i>
-                <span>Yangon University of Foreign Language University</span>
-            </a>
-        </li>
-        <li>
-            <a href="#" class="text-dark">
-                <i class="fa fa-university"></i>
-                <span>Yangon University of Economic</span>
-            </a>
-        </li>
+        {% if my_uni_info %}
+            <li class="my-3">
+                <a href="/university_detail/{{ my_uni_info.0|encrypt_id }}/" class="text-dark">
+                    <div class="profile-display">
+                        <div class="profile-img">
+                            <div class="profile-pic-style" style="background-image: url(data:image/png;base64,{{ my_uni_info.5 }});"></div>
+                        </div>
+                        <b>{{ my_uni_info.1 }}</b>
+                    </div>
+                </a>
+            </li>
+        {% endif %}
+
+        {% if show_uni_list %}
+            {% for uni_list in show_uni_list %}
+                <li>
+                    <a href="/university_detail/{{ uni_list.0|encrypt_id }}/" class="text-dark">
+                        <i class="fa fa-university"></i>
+                        <span>{{ uni_list.1 }}</span>
+                    </a>
+                </li>
+            {% endfor %}
+        {% endif %}
         <li>
             <a href="/university_list/" class="text-dark">
                 <i class="fa fa-list"></i>
-                <span>See More</span>
+                <span>See all</span>
             </a>
         </li>
     </ul>

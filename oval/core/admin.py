@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import UserInfo, University, Country, City, Major, Post, PostType, AskQuestion
+from .models import UserInfo, University, Country, City, Major, Post, PostType, AskQuestion, Company
 
 # Register your models here.
 
@@ -30,8 +30,13 @@ class UniversityAdmin(admin.ModelAdmin):
     list_display = ['name', 'admin_email', 'created_at', 'updated_at']
 
 
+class CompanyAdmin(admin.ModelAdmin):
+    list_display = ['name', 'admin_email', 'created_at', 'updated_at']
+
+
 admin.site.register(UserInfo)
 admin.site.register(University, UniversityAdmin)
+admin.site.register(Company, CompanyAdmin)
 admin.site.register(Country, CountryAdmin)
 admin.site.register(City, CityAdmin)
 admin.site.register(Major, MajorAdmin)

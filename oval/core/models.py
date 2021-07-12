@@ -31,12 +31,13 @@ class University(models.Model):
     place = models.CharField(max_length=255, null=True, blank=True)
     city_id = models.IntegerField(null=True, blank=True)
     country_id = models.IntegerField(null=True, blank=True)
-    profile_picture = models.CharField(max_length=255, null=True, blank=True)
-    cover_photo = models.CharField(max_length=255, null=True, blank=True)
-    representative_id = models.IntegerField(null=True, blank=True)
+    profile_picture = models.TextField(null=True, blank=True)
+    cover_photo = models.TextField(null=True, blank=True)
     description = models.TextField(null=True, blank=True)
     major_id = models.IntegerField(null=True, blank=True)
     google_map_link = models.TextField(null=True, blank=True)
+    email = models.CharField(max_length=255, null=True, blank=True)
+    phone = models.CharField(max_length=255, null=True, blank=True)
     created_at = models.DateTimeField(auto_now_add=True, null=True, blank=True)
     updated_at = models.DateTimeField(auto_now=True, null=True, blank=True)
 
@@ -92,3 +93,23 @@ class AskQuestion(models.Model):
     user = models.ForeignKey('UserInfo', on_delete=models.CASCADE)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
+
+
+class Company(models.Model):
+    name = models.CharField(max_length=255, null=True, blank=True)
+    admin_email = models.CharField(max_length=255, null=True, blank=True)
+    place = models.CharField(max_length=255, null=True, blank=True)
+    city_id = models.IntegerField(null=True, blank=True)
+    country_id = models.IntegerField(null=True, blank=True)
+    profile_picture = models.TextField(null=True, blank=True)
+    cover_photo = models.TextField(null=True, blank=True)
+    description = models.TextField(null=True, blank=True)
+    google_map_link = models.TextField(null=True, blank=True)
+    email = models.CharField(max_length=255, null=True, blank=True)
+    phone = models.CharField(max_length=255, null=True, blank=True)
+    created_at = models.DateTimeField(auto_now_add=True, null=True, blank=True)
+    updated_at = models.DateTimeField(auto_now=True, null=True, blank=True)
+
+    def __str__(self):
+        return self.name
+

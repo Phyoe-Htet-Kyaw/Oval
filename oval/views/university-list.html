@@ -7,19 +7,27 @@
     {% for uni in uni_info %}
     <div class="card">
         <div class="card-body">
-            <a href="/university_detail/{{ uni.0|encrypt_id }}" class="custom-link">
+            <a href="/university_detail/{{ uni.0|encrypt_id }}/" class="custom-link">
                 <div class="card-profile">
                     <div class="card-profile-pic">
-                        <div class="profile-pic-style" style="background-image: url(data:image/png;base64,{{ post.5 }});"></div>
+                        <div class="profile-pic-style" style="background-image: url(data:image/png;base64,{{ uni.5 }});"></div>
                     </div>
                     <div class="card-profile-fact">
                         <h5 class="text-dark">{{ uni.1 }}</h5>
                     </div>
                 </div>
+                <div class="university-profile-list mt-3">
+                    {% if uni.13 %}
+                        <p class="text-dark"><i class="fa fa-envelope"></i> You can sent email to <b>{{ uni.13 }}</b></p>
+                    {% endif %}
+                    {% if uni.14 %}
+                        <p class="text-dark"><i class="fa fa-phone"></i> You can call to <b>{{ uni.14 }}</b></p>
+                    {% endif %}
+                    {% if uni.2 or uni.3 or uni.4 %}
+                        <p class="text-dark"><i class="fa fa-map-marker-alt"></i> Location in <b>{{ uni.2 }}, {{ uni.3|get_city }}, {{ uni.4|get_country }}</b></p>
+                    {% endif %}
+                </div>
             </a>
-            <div class="card-para mt-3">
-<!--                {{ uni.1 | safe }}-->
-            </div>
         </div>
     </div>
     <hr>

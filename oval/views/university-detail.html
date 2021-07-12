@@ -4,15 +4,80 @@
 {% block content %}
 
 <div class="panel-2">
-    <div class="profile-cover-photo" style="background-image: url(data:image/png;base64,{{ cover_photo }});"></div>
+    {% if uni_info.6 %}
+        <div class="profile-cover-photo" style="background-image: url(data:image/png;base64,{{ uni_info.6 }});"></div>
+    {% else %}
+        <div style="height: 10%"></div>
+    {% endif %}
     <div class="profile-picture-name">
-        <div class="profile-picture-profile" style="background-image: url(data:image/png;base64,{{ profile_picture }});"></div>
+        {% if uni_info.5 %}
+            <div class="profile-picture-profile" style="background-image: url(data:image/png;base64,{{ uni_info.5 }});"></div>
+        {% endif %}
         <b style="font-size: 25px;" class="ml-3">{{ uni_info.1 }}</b>
     </div>
-    <div class="profile-option">
-        <a href="/university_update/{{ uni_info.0|encrypt_id }}" class="badge badge-primary">Update your university profile</a>
+    <div class="university-profile-list">
+        {% if uni_info.13 %}
+            <p class="text-dark"><i class="fa fa-envelope"></i> You can sent email to <b>{{ uni_info.13 }}</b></p>
+        {% endif %}
+        {% if uni_info.14 %}
+            <p class="text-dark"><i class="fa fa-phone"></i> You can call to <b>{{ uni_info.14 }}</b></p>
+        {% endif %}
+        {% if uni_info.2 or uni_info.3 or uni_info.4 %}
+            <p class="text-dark"><i class="fa fa-map-marker-alt"></i> Location in <b>{{ uni_info.2 }}, {{ uni_info.3|get_city }}, {{ uni_info.4|get_country }}</b></p>
+        {% endif %}
+        {% if option_status == 1 %}
+            <a href="/university_update/{{ uni_info.0|encrypt_id }}/" class="text-dark"><i class="fa fa-cogs"></i> You can update your university info from here.</a>
+        {% endif %}
     </div>
     <hr>
+    {% if uni_info.7 %}
+        <div class="profile-detail">
+            <h4>About</h4>
+            <div>{{ uni_info.7 | safe }}</div>
+        </div>
+    <hr>
+    {% endif %}
+    {% if uni_info.9 %}
+    <div class="location-map">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3817.187139950078!2d96.20656231481931!3d16.91605858836268!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30c19145a6a37dd5%3A0xf52016f4bcb6cfb2!2sDagon%20University!5e0!3m2!1sen!2smm!4v1618202136634!5m2!1sen!2smm" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    </div>
+    <hr>
+    {% endif %}
+    {% if option_status == 1 %}
+        <form action="/upload_university_post/{{ uni_info.0|encrypt_id }}/" method="post">
+            {% csrf_token %}
+            <textarea name="post" id="summernote" cols="30" rows="10" placeholder="What's on your mind" class="form-control form-control-sm"></textarea>
+            <button type="submit" class="btn btn-sm bg-custom text-white mt-3"><i class="fa fa-paper-plane"></i> Submit</button>
+        </form>
+    {% endif %}
+    <hr>
+    {% if posts %}
+        {% for post in posts %}
+        <div class="card">
+            <div class="card-body">
+                <a href="profile.html" class="custom-link">
+                    <div class="card-profile">
+                        <div class="card-profile-pic">
+                            <div class="profile-pic-style" style="background-image: url(data:image/png;base64,{{ post.5 }});"></div>
+                        </div>
+                        <div class="card-profile-fact">
+                            <b class="text-dark">{{ post.4 }}</b>
+                            <span class="text-muted uploaded-time">Updated at 10mins ago</span>
+                        </div>
+                    </div>
+                </a>
+                <div class="card-para mt-3">
+                    {{ post.1 | safe }}
+                </div>
+                <div class="card-like">
+                    <span><i class="fa fa-thumbs-up"></i> 1.1k Likes</span> &nbsp;
+                    <span><i class="fa fa-comments"></i> 1.1k Comments</span>
+                </div>
+            </div>
+        </div>
+        <hr>
+        {% endfor %}
+    {% endif %}
 </div>
 
 {% endblock %}

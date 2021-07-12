@@ -2,29 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fb975e04-dd41-4a8c-a2b1-48594c4e7f00" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/oval/core/static/js/university_update.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/oval/core/static/js/upload-cover-photo.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/oval/core/templatetags/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/oval/core/templatetags/extra.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/oval/views/talent.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/oval/views/university-detail.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/oval/views/university-list.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/oval/views/university-update.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Oval.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Oval.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/oval/core/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/oval/core/admin.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/oval/core/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/oval/core/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/oval/core/static/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/oval/core/static/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oval/core/static/js/university_update.js" beforeDir="false" afterPath="$PROJECT_DIR$/oval/core/static/js/university_update.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oval/core/templatetags/extra.py" beforeDir="false" afterPath="$PROJECT_DIR$/oval/core/templatetags/extra.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/oval/core/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/oval/core/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oval/oval/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/oval/oval/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/oval/oval/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/oval/oval/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oval/views/auth/upload-cover-photo.html" beforeDir="false" afterPath="$PROJECT_DIR$/oval/views/auth/upload-cover-photo.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oval/views/auth/upload-profile-picture.html" beforeDir="false" afterPath="$PROJECT_DIR$/oval/views/auth/upload-profile-picture.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oval/views/create-post.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/oval/views/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/oval/views/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oval/views/profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/oval/views/profile.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oval/views/talent.html" beforeDir="false" afterPath="$PROJECT_DIR$/oval/views/talent.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/oval/views/template/footer.html" beforeDir="false" afterPath="$PROJECT_DIR$/oval/views/template/footer.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oval/views/template/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/oval/views/template/header.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/oval/views/template/left-side.html" beforeDir="false" afterPath="$PROJECT_DIR$/oval/views/template/left-side.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oval/views/university-detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/oval/views/university-detail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oval/views/university-list.html" beforeDir="false" afterPath="$PROJECT_DIR$/oval/views/university-list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oval/views/university-update.html" beforeDir="false" afterPath="$PROJECT_DIR$/oval/views/university-update.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,6 +26,14 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
   </component>
   <component name="ProjectId" id="1nojrWZ3iyjJeu4GQ26Ug5zfXzI" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">

@@ -4,10 +4,11 @@
 {% block content %}
 
 <div class="panel-2">
-    <form action="" method="post">
-        <div class="profile-cover-photo" id="cover-preview" style="border: 1px solid #186ba1;"></div>
+    <form action="" method="post" id="university_update" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="profile-cover-photo" id="cover-preview" style="border: 1px solid #186ba1; background-image: url(data:image/png;base64,{{ uni_info.6 }});"></div>
         <div class="profile-picture-name">
-            <div class="profile-picture-profile" id="profile-preview" style="border: 1px solid #186ba1; background-color: #fff;"></div>
+            <div class="profile-picture-profile" id="profile-preview" style="border: 1px solid #186ba1; background-image: url(data:image/png;base64,{{ uni_info.5 }});"></div>
         </div>
         <div class="file-upload">
             <div class="row">
@@ -16,7 +17,7 @@
                     <input type="file" id="profile-fileupload" name="profile_picture" accept="image/*">
                 </div>
                 <div class="col-md-6 col-sm-12">
-                    <label for="cover-fileupload">Upload Profile Picture</label>
+                    <label for="cover-fileupload">Upload Cover Photo</label>
                     <input type="file" id="cover-fileupload" name="profile_picture" accept="image/*">
                 </div>
             </div>
@@ -25,44 +26,68 @@
             <div class="col-md-6 col-sm-12">
                 <div class="form-group">
                     <label for="name">Name</label>
-                    <input type="text" name="name" id="name" placeholder="Enter Name" class="form-control-sm form-control">
+                    <input type="text" name="name" id="name" placeholder="Enter Name" value="{{ uni_info.1 }}" class="form-control-sm form-control">
+                    <input type="hidden" name="uni" id="uni" value="{{ uni_info.0|encrypt_id }}">
                 </div>
             </div>
             <div class="col-md-6 col-sm-12">
                 <div class="form-group">
                     <label for="address">Address</label>
-                    <input type="text" name="address" id="address" placeholder="Enter Address" class="form-control-sm form-control">
+                    <input type="text" name="address" id="address" value="{{ uni_info.2 }}" placeholder="Enter Address" class="form-control-sm form-control">
                 </div>
             </div>
         </div>
         <div class="row">
             <div class="col-md-6 col-sm-12">
                 <div class="form-group">
-                    <label for="country">Country</label>
+                    <label for="email">Email</label>
+                    <input type="text" name="email" id="email" placeholder="Enter Email" value="{{ uni_info.13|check_none }}" class="form-control-sm form-control">
+                </div>
+            </div>
+            <div class="col-md-6 col-sm-12">
+                <div class="form-group">
+                    <label for="phone">Phone</label>
+                    <input type="text" name="phone" id="phone" value="{{ uni_info.14|check_none }}" placeholder="Enter Phone" class="form-control-sm form-control">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 col-sm-12">
+                <div class="form-group">
+                    <label for="country">Country <b>({{ uni_info.4|get_country }})</b></label>
                     <select name="country" id="country" class="form-control form-control-sm">
-                        <option value="1">Test</option>
+                        <option value="null">- Choose Country -</option>
+                        {% for country in country_list %}
+                            <option value="{{ country.0 }}">{{ country.1 }}</option>
+                        {% endfor %}
                     </select>
                 </div>
             </div>
             <div class="col-md-6 col-sm-12">
                 <div class="form-group">
-                    <label for="city">City</label>
-                    <select name="city" id="city" class="form-control form-control-sm">
-                        <option value="1">Test</option>
-                    </select>
+                    <label for="city">City <b>({{ uni_info.3|get_city }})</b></label>
+                    <select name="city" id="city" class="form-control form-control-sm"></select>
                 </div>
             </div>
         </div>
         <div class="row">
             <div class="col-sm-12">
-                <label for="map">Google Map</label>
-                <input type="text" name="map" id="map" placeholder="Enter Google Map Link" class="form-control-sm form-control">
+                <div class="form-group">
+                    <label for="map">Google Map</label>
+                    <input type="text" name="map" id="map" value="{{ uni_info.9 }}" placeholder="Enter Google Map Link" class="form-control-sm form-control">
+                </div>
             </div>
         </div>
         <div class="row">
             <div class="col-sm-12">
-                <label>About</label>
-                <textarea name="post" id="summernote" cols="30" rows="10" placeholder="What's on your mind" class="form-control form-control-sm"></textarea>
+                <div class="form-group">
+                    <label>About</label>
+                    <textarea name="post" id="summernote" cols="30" rows="10" placeholder="What's on your mind" class="form-control form-control-sm about">{{ uni_info.7 }}</textarea>
+                </div>
+                <div class="form-group mt-3">
+                    <a href="/university_detail/{{ uni_info.0|encrypt_id }}/"><button class="btn btn-danger btn-sm" type="button"><i class="fa fa-arrow-circle-left"></i> Back</button></a>
+                    <button type="submit" class="btn btn-sm bg-custom text-white"><i class="fa fa-paper-plane"></i> Update</button>
+                </div>
             </div>
         </div>
     </form>
